@@ -60,7 +60,7 @@ function App() {
   });
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-10">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 ">
         <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
           <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">Todo App</h1>
 
