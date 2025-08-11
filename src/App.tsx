@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { type Todo } from './types'
 
+type Filter = 'all' | 'active' | 'completed';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -18,6 +19,14 @@ function App() {
     setText('');
   }
 
+  useEffect(() => {
+    const saved = localStorage.getItem('todos');
+    if(saved) setTodos(JSON.parse(saved));
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos])
   const toggleTodo = (id: number) => {
     setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo))
   }
